@@ -25,7 +25,7 @@ Or at least that's the theory of it.<br>
 These custom nodes for ComfyUI will allow you to READ and WRITE XMP METADATA to images.
 A sidenote though, this is *not* designed to handle image generation datas, there's already plenty of nodes for that.
 
-If you had similar needs to use prompt keywords and other datas from AI generated images to use as search tags, I can't recommend anything but the amazing <a href="https://github.com/RupertAvery/DiffusionToolkit">Diffusion Toolkit</a>, it's awesome, <b>TRY IT IT'S GREAT</b><br>
+If you had similar needs to use prompt keywords and other datas from AI generated images to use as search tags, I can't recommend anything but the amazing <a href="https://github.com/RupertAvery/DiffusionToolkit">Diffusion Toolkit</a> it's awesome, <b>TRY IT IT'S GREAT</b><br>
 Picasa was nice too with tags, back in the days... a bit limited though. A bit dead too, long ago x) Sad. And Lightroom is... meh. Nah.
 <h1>ANYWAY</h1>
 
