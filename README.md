@@ -7,7 +7,7 @@
 <div align="center">
 
 ---
- [**Installation**](#installation) | [**Nodelist**](#nodelist) | [**Examples**](#examples) | [**Credits**](#credits) |[**License**](#license)
+ [**Installation**](#installation) | [**Tiny node list**](#tiny-node-list) | [**Examples**](#examples)
 ---
 
 </div>
