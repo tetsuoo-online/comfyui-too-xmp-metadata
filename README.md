@@ -3,20 +3,21 @@
 # ComfyUI XMP Metadata Tools
 
 ### This is the Comfyui version of a very personal project I started last year (2024) with GPT/Claude, as a shell/commandline tool to add tags to ANY images on my computer.
-<ins>Why you say ? Whole unnecessary story down below</ins>
-<details>
-  <summary>Click to expand</summary>
-  Because. I.Love.Images. Too much ! So the big idea was to add tags to images instead of yet another gigantic-painful-to-maintain database, that way you CAN'T LOSE THE TAG DATABASE ANYMORE IT'S INSIDE THE FILES !! This is genius. lol
-Later on, to find any image that I can't clearly remember the name of, I can simply type a keyword in a pic viewer that supports XML tags, like for example <a href="https://www.xnview.com/">XnView MP</a>. Or at least that's the theory of it. If you had similar needs but for AI generated images with prompts and stuff you would love to use as search tags, I can't recommend anything but the amazing <a href=https://github.com/RupertAvery/DiffusionToolkit>Diffusion Toolkit</a>, it's awesome. TRY IT IT'S GREAT
-  Picasa was nice too to search from metadata, a bit limited. A bit dead too, long ago x) Sad. Lightroom is... meh. Nope. <h2>ANYWAY</h2>
-</details>
+<ins>Why you say ? READ THE WHOLE STORY</ins> (or not, your call)
 
-This a few custom nodes for ComfyUI that allow you to READ and WRITE XMP METADATA to images. These tools are particularly useful for preserving and managing tags, descriptions, and other metadata in your images. A sidenote though, this is *not* designed for writing image generation workflows, there's already plenty of nodes for that.
+  Because. I.Love.Images. Too much ! So the big idea was to add tags to images instead of yet another gigantic-painful-to-maintain database, that way you CAN'T LOSE THE TAG DATABASE ANYMORE IT'S INSIDE THE FILES !! This is genius. lol
+Later on, to find any image that I can't clearly remember the name of, I can simply type a keyword in a pic viewer that supports XML tags, like for example <a href="https://www.xnview.com/">XnView MP</a>.<br>
+  Or at least that's the theory of it.<br>
+If you had similar needs but for AI generated images with prompts and stuff you would love to use as search tags, I can't recommend anything but the amazing <a href=https://github.com/RupertAvery/DiffusionToolkit>Diffusion Toolkit</a>, it's awesome, <b>TRY IT IT'S GREAT</b><br>
+  Picasa was nice too to search from tags, back in the days... a bit limited. A bit dead too, long ago x) Sad. And Lightroom is... meh. Nah. <h2>ANYWAY</h2>
+
+
+This is a few custom nodes for ComfyUI that allow you to READ and WRITE XMP METADATA to images. These tools are particularly useful for preserving and managing tags, descriptions, and other metadata in your images. A sidenote though, this is *not* designed for writing image generation workflows, there's already plenty of nodes for that.
 
 
 ## Features
 
-### Read XMP Metadata
+<h3>🟢Read XMP Metadata</h3>
 This node extracts XMP metadata from an image file.
 
 - **Inputs**:
@@ -28,7 +29,7 @@ This node extracts XMP metadata from an image file.
 - **Outputs**:
   - The extracted metadata value as a string
 
-### Write XMP Metadata (Lossless)
+<H3>🟢 Write XMP Metadata (Lossless)</H3>
 This node adds XMP metadata to an existing image file without altering the image data, making the image practically the same size as the original (+ a few bits for the text) but also preserving the original format and timestamps.
 
 - **Inputs**:
@@ -46,7 +47,7 @@ This node adds XMP metadata to an existing image file without altering the image
   - **Date preservation**: Maintains the original creation and modification dates
   - **Safe operation**: Avoids processing loops by detecting files in "tagged" folders
 
-### Write XMP Metadata
+<H3>🟢 Write XMP Metadata</H3>
 This node adds XMP metadata to an image tensor, with options for choosing the output format.
 
 - **Inputs**:
@@ -65,7 +66,7 @@ This node adds XMP metadata to an image tensor, with options for choosing the ou
   - **Format options**: Can force specific formats or try to preserve the original format
   - **Integration with ComfyUI workflow**: Works directly with image tensors from other nodes
 
-## Installation
+<H3>🟡 Installation</H3>
 
 1. Clone this repository into the `custom_nodes` folder of your ComfyUI installation:
    ```
@@ -74,10 +75,9 @@ This node adds XMP metadata to an image tensor, with options for choosing the ou
    ```
 
 2. Make sure ExifTool is installed:
-   - Windows: The extension includes ExifTool.exe
-   - Linux/Mac: Install ExifTool via your package manager
-
-3. Restart ComfyUI
+   - Download it <a href=https://exiftool.org/>here</ a>
+   - rename it to ExifTool.exe and put it at root folder.
+   
 
 ## Usage Examples
 
@@ -87,7 +87,7 @@ This node adds XMP metadata to an image tensor, with options for choosing the ou
 2. Enter the path to your image in `input_image_path`
 3. Add your tags as comma-separated values in `metadata` (e.g., "landscape, sunset, ocean")
 4. Run the node
-5. The tagged image will be saved in a "tagged" subfolder in the same directory as the original
+5. The tagged image will be saved in a `"tagged"` subfolder in the same directory as the original, unless you specify a custom path
 
 ### Adding metadata to a generated image
 
@@ -125,6 +125,10 @@ The `metadata` input can be either:
 - ExifTool
 - PIL/Pillow
 - NumPy
+
+** TO DO **
+- add tooltips
+- add subfolders support maybe. It sounds dangerous, but I need it~
 
 ## License
 
