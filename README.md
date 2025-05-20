@@ -1,9 +1,9 @@
 <div align="center">
-<H1 align="center">ComfyUI XMP Metadata Tools</H1>
+<h1 align="center">ComfyUI XMP Metadata Tools</h1>
 </div>
 
 ![Image](https://github.com/user-attachments/assets/ae1f9455-4e22-4ba0-a182-c68a0b10dda5)
-<H5>This image contains the workflow, you can drag'n drop it into Comfyui</H5>
+<h5>This image contains the workflow, you can drag'n drop it into Comfyui</h5>
 <div align="center">
 
 ---
@@ -25,11 +25,11 @@ Or at least that's the theory of it.<br>
 These custom nodes for ComfyUI will allow you to READ and WRITE XMP METADATA to images.
 A sidenote though, this is *not* designed to handle image generation datas, there's already plenty of nodes for that.
 
-If you had similar needs to use prompt keywords and other datas from AI generated images to use as search tags, I can't recommend anything but the amazing <a href=https://github.com/RupertAvery/DiffusionToolkit>Diffusion Toolkit</a>, it's awesome, <b>TRY IT IT'S GREAT</b><br>
+If you had similar needs to use prompt keywords and other datas from AI generated images to use as search tags, I can't recommend anything but the amazing <a href="https://github.com/RupertAvery/DiffusionToolkit">Diffusion Toolkit</a>, it's awesome, <b>TRY IT IT'S GREAT</b><br>
 Picasa was nice too with tags, back in the days... a bit limited though. A bit dead too, long ago x) Sad. And Lightroom is... meh. Nah.
-<H1>ANYWAY</H1>
+<h1>ANYWAY</h1>
 
-# Installation
+## Installation
 
 1. Clone this repository into the `custom_nodes` folder of your ComfyUI installation:
    ```
@@ -37,10 +37,10 @@ Picasa was nice too with tags, back in the days... a bit limited though. A bit d
    ```
 
 2. Make sure ExifTool is installed:
-   - Download it <a href=https://exiftool.org/>here</a>
+   - Download it <a href="https://exiftool.org/">here</a>
    - rename the EXE (usually called "exiftool(-k).exe") to `exifTool.exe` then put it to the package root folder.
 
-# Tiny node list
+## Tiny node list
 
 <h3>🟢 Read XMP Metadata</h3>
 This node extracts XMP metadata from an image file.
@@ -54,7 +54,7 @@ This node extracts XMP metadata from an image file.
 - **Outputs**:
   - The extracted metadata value as a string
 
-<H3>🟢 Write XMP Metadata (Lossless)</H3>
+<h3>🟢 Write XMP Metadata (Lossless)</h3>
 This node adds XMP metadata to an existing image file without altering the image data, making the image practically the same size as the original (+ a few bits for the text) but also preserving the original format and timestamps.
 
 - **Inputs**:
@@ -72,7 +72,7 @@ This node adds XMP metadata to an existing image file without altering the image
   - **Date preservation**: Maintains the original creation and modification dates
   - **Safe operation**: Avoids processing loops by detecting files in "tagged" folders
 
-<H3>🟢 Write XMP Metadata</H3>
+<h3>🟢 Write XMP Metadata</h3>
 This node adds XMP metadata to an image tensor, with options for choosing the output format.
 
 - **Inputs**:
@@ -91,11 +91,11 @@ This node adds XMP metadata to an image tensor, with options for choosing the ou
   - **Format options**: Can force specific formats or try to preserve the original format
   - **Integration with ComfyUI workflow**: Works directly with image tensors from other nodes
 
-🔴 IMPORTANT NOTE : For now, the Write XMP Metadata LOSSLESS node will overwrite existing XMP datas but other non-XMP metadata should remain (see image example below). The normal Wtrie XMP Metadata on ther hand re-format the image so if anything was in there will be PURGED before adding the new XMP metadata. So pay attention to that
+🔴 **IMPORTANT NOTE**: For now, the Write XMP Metadata LOSSLESS node will overwrite existing XMP datas but other non-XMP metadata should remain (see image example below). The normal Write XMP Metadata on the other hand re-formats the image so if anything was in there will be PURGED before adding the new XMP metadata. So pay attention to that.
 
-# Examples
+## Examples
 ![image](https://github.com/user-attachments/assets/6ad235e5-69f0-4e27-8768-7f2142fdcbee)
-<H3>This is the result in XnView</H3>
+<h3>This is the result in XnView</h3>
 
 ### Adding tags to an existing image without modifying it
 
@@ -142,15 +142,14 @@ The `metadata` input can be either:
 - PIL/Pillow
 - NumPy
 
-** TO DO **
+## TO DO
 - existing XMP data management
 - add subfolders support maybe. It sounds dangerous, but I need it~
 - add tooltips
 
-# Credits
+## Credits
 - Special thanks to Claude Sonnet AI x) Manus AI got me started despite the poor service, ChatGPT helped too but Claude was definitely the best
-- <a href="https://github.com/Starnodes2024">Starnodes2024</a> for the inspiration
-
+- Thank you to <a href="https://github.com/Starnodes2024">Starnodes2024</a> for the inspiration
 
 ## License
 
