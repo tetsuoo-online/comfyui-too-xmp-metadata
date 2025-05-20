@@ -3,13 +3,13 @@
 # ComfyUI XMP Metadata Tools
 
 ### This is the Comfyui version of a very personal project I started last year (2024) with GPT/Claude, as a shell/commandline tool to add tags to ANY images on my computer.
-Why you say ? Whole unecessary story down below
+<ins>Why you say ? Whole unnecessary story down below</ins>
 <details>
   <summary>Click to expand</summary>
-  Because. I.Love.Images. Too much ! So the big idea was to add tags to images instead of yet another gigantic-painful-to-maintain database, that way you CAN'T LOSE THE TAGS ANYMORE IT'S INSIDE THE FILES ALREADY !! This is genius. lol
-Later on, to find any image that I can't clearly remember the name of, I can simply type a keyword in a pic viewer that supports XML tags, like for example [XnView MP](https://www.xnview.com/).
-Picasa was nice too, a bit limited. A bit dead too, long ago x) Sad.
-  ANYWAY</details>
+  Because. I.Love.Images. Too much ! So the big idea was to add tags to images instead of yet another gigantic-painful-to-maintain database, that way you CAN'T LOSE THE TAG DATABASE ANYMORE IT'S INSIDE THE FILES !! This is genius. lol
+Later on, to find any image that I can't clearly remember the name of, I can simply type a keyword in a pic viewer that supports XML tags, like for example <a href="https://www.xnview.com/">XnView MP</a>. Or at least that's the theory of it. If you had similar needs but for AI generated images with prompts and stuff you would love to use as search tags, I can't recommend anything but the amazing <a href=https://github.com/RupertAvery/DiffusionToolkit>Diffusion Toolkit</a>, it's awesome. TRY IT IT'S GREAT
+  Picasa was nice too to search from metadata, a bit limited. A bit dead too, long ago x) Sad. Lightroom is... meh. Nope. <h2>ANYWAY</h2>
+</details>
 
 This a few custom nodes for ComfyUI that allow you to READ and WRITE XMP METADATA to images. These tools are particularly useful for preserving and managing tags, descriptions, and other metadata in your images. A sidenote though, this is *not* designed for writing image generation workflows, there's already plenty of nodes for that.
 
@@ -29,7 +29,7 @@ This node extracts XMP metadata from an image file.
   - The extracted metadata value as a string
 
 ### Write XMP Metadata (Lossless)
-This node adds XMP metadata to an existing image file without altering the image data, preserving the original format and timestamps.
+This node adds XMP metadata to an existing image file without altering the image data, making the image practically the same size as the original (+ a few bits for the text) but also preserving the original format and timestamps.
 
 - **Inputs**:
   - `input_image_path`: Path to the original image file
