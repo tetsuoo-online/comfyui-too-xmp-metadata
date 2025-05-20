@@ -7,7 +7,7 @@
 <div align="center">
 
 ---
- [**Installation**](##installation) | [**Tiny node list**](#node-list) | [**Examples**](#examples) | [**Credits**](#credits) |[**License**](#license)
+ [**Installation**](#installation) | [**Tiny node list**](#node-list) | [**Examples**](#examples) | [**Credits**](#credits) |[**License**](#license)
 ---
 
 </div>
@@ -35,7 +35,7 @@ This is a few custom nodes for ComfyUI that allow you to READ and WRITE XMP META
    - Download it <a href=https://exiftool.org/>here</a>
    - rename the EXE (usually called "exiftool(-k).exe") to `exifTool.exe` then put it to the package root folder.
 
-## Tiny node list
+#🟡 Tiny node list
 
 <h3>🟢 Read XMP Metadata</h3>
 This node extracts XMP metadata from an image file.
