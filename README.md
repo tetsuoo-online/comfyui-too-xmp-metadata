@@ -17,7 +17,7 @@ This is a few custom nodes for ComfyUI that allow you to READ and WRITE XMP META
 
 ## Features
 
-<h3>🟢Read XMP Metadata</h3>
+<h3>🟢 Read XMP Metadata</h3>
 This node extracts XMP metadata from an image file.
 
 - **Inputs**:
