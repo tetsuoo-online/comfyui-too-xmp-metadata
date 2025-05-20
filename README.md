@@ -7,7 +7,7 @@
 <div align="center">
 
 ---
-[**Getting Started**](#getting-started) | [**Nodes**](#nodes) | [**Credits**](#credits)
+ [**Installation**](##installation) | [**Tiny node list**](#node-list) | [**Examples**](#examples) | [**Credits**](#credits) |[**License**](#license)
 ---
 
 </div>
@@ -24,7 +24,7 @@ If you had similar needs but for AI generated images with prompts and stuff you 
 
 This is a few custom nodes for ComfyUI that allow you to READ and WRITE XMP METADATA to images. These tools are particularly useful for preserving and managing tags, descriptions, and other metadata in your images. A sidenote though, this is *not* designed for writing image generation workflows, there's already plenty of nodes for that.
 
-<H3>🟡 Installation</H3>
+# Installation
 
 1. Clone this repository into the `custom_nodes` folder of your ComfyUI installation:
    ```
@@ -88,7 +88,7 @@ This node adds XMP metadata to an image tensor, with options for choosing the ou
 
 🔴 IMPORTANT NOTE : For now, the Write XMP Metadata LOSSLESS node will overwrite existing XMP datas but other non-XMP metadata should remain (see image example below). The normal Wtrie XMP Metadata on ther hand re-format the image so if anything was in there will be PURGED before adding the new XMP metadata. So pay attention to that
 
-## Usage Examples
+# Examples
 ![image](https://github.com/user-attachments/assets/6ad235e5-69f0-4e27-8768-7f2142fdcbee)
 <H3>This is the result in XnView</H3>
 
@@ -138,8 +138,14 @@ The `metadata` input can be either:
 - NumPy
 
 ** TO DO **
-- add tooltips
+- existing XMP data management
 - add subfolders support maybe. It sounds dangerous, but I need it~
+- add tooltips
+
+# Credits
+- Special thanks to Claude Sonnet AI x) Manus AI got me started despite the poor service, ChatGPT helped too but Claude was definitely the best
+- <a href="https://github.com/Starnodes2024">Starnodes2024</a> for the inspiration
+
 
 ## License
 
