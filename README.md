@@ -13,18 +13,23 @@
 </div>
 
 ### This is the Comfyui version of a personal project I started last year (2024) with GPT/Claude, as a shell/commandline tool to add tags to ANY images on my computer.
-<ins>Why you say ? READ THE WHOLE STORY</ins> (or not, your call)
-
-  Because. I.Love.Images. Too much ! So the big idea was to add tags to images instead of yet another gigantic-painful-to-maintain database, that way you CAN'T LOSE THE TAG DATABASE ANYMORE IT'S INSIDE THE FILES !! This is genius. lol
+<details>
+ <summary><ins>Why, you say ? READ THE WHOLE STORY</ins> (or not, your call)</summary>
+ <div>
+Because. I.Love.Images. Too much ! So the big idea was to add tags to images instead of yet another gigantic-painful-to-maintain database, that way you CAN'T LOSE THE TAG DATABASE ANYMORE IT'S INSIDE THE FILES !! This is genius. lol
 Later on, to find any image that I can't clearly remember the name of, I can simply type a keyword in a pic viewer that supports XML tags, like for example <a href="https://www.xnview.com/">XnView MP</a>.<br>
-  Or at least that's the theory of it.<br>
-If you had similar needs but for AI generated images with prompts and stuff you would love to use as search tags, I can't recommend anything but the amazing <a href=https://github.com/RupertAvery/DiffusionToolkit>Diffusion Toolkit</a>, it's awesome, <b>TRY IT IT'S GREAT</b><br>
-  Picasa was nice too to search from tags, back in the days... a bit limited. A bit dead too, long ago x) Sad. And Lightroom is... meh. Nah. <h1>_ANYWAY_</h1>
+Or at least that's the theory of it.<br>
+</div>
+</details>
 
+These custom nodes for ComfyUI will allow you to READ and WRITE XMP METADATA to images.
+A sidenote though, this is *not* designed to handle image generation datas, there's already plenty of nodes for that.
 
-This is a few custom nodes for ComfyUI that allow you to READ and WRITE XMP METADATA to images. These tools are particularly useful for preserving and managing tags, descriptions, and other metadata in your images. A sidenote though, this is *not* designed for writing image generation workflows, there's already plenty of nodes for that.
+If you had similar needs to use prompt keywords and other datas from AI generated images to use as search tags, I can't recommend anything but the amazing <a href=https://github.com/RupertAvery/DiffusionToolkit>Diffusion Toolkit</a>, it's awesome, <b>TRY IT IT'S GREAT</b><br>
+Picasa was nice too with tags, back in the days... a bit limited though. A bit dead too, long ago x) Sad. And Lightroom is... meh. Nah.
+<H1>ANYWAY</H1>
 
-# Installation🟡
+# Installation
 
 1. Clone this repository into the `custom_nodes` folder of your ComfyUI installation:
    ```
