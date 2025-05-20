@@ -24,7 +24,7 @@ If you had similar needs but for AI generated images with prompts and stuff you 
 
 This is a few custom nodes for ComfyUI that allow you to READ and WRITE XMP METADATA to images. These tools are particularly useful for preserving and managing tags, descriptions, and other metadata in your images. A sidenote though, this is *not* designed for writing image generation workflows, there's already plenty of nodes for that.
 
-# Installation
+# Installation🟡
 
 1. Clone this repository into the `custom_nodes` folder of your ComfyUI installation:
    ```
