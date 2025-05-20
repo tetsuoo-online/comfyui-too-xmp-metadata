@@ -2,7 +2,7 @@
 ![Image](https://github.com/user-attachments/assets/ae1f9455-4e22-4ba0-a182-c68a0b10dda5)
 <H5>This image contains the workflow, you can drag'n drop it into Comfyui</H5>
 
-### This is the Comfyui version of a very personal project I started last year (2024) with GPT/Claude, as a shell/commandline tool to add tags to ANY images on my computer.
+### This is the Comfyui version of a personal project I started last year (2024) with GPT/Claude, as a shell/commandline tool to add tags to ANY images on my computer.
 <ins>Why you say ? READ THE WHOLE STORY</ins> (or not, your call)
 
   Because. I.Love.Images. Too much ! So the big idea was to add tags to images instead of yet another gigantic-painful-to-maintain database, that way you CAN'T LOSE THE TAG DATABASE ANYMORE IT'S INSIDE THE FILES !! This is genius. lol
