@@ -1,6 +1,6 @@
-![Image](https://github.com/user-attachments/assets/ae1f9455-4e22-4ba0-a182-c68a0b10dda5)
-
 # ComfyUI XMP Metadata Tools
+![Image](https://github.com/user-attachments/assets/ae1f9455-4e22-4ba0-a182-c68a0b10dda5)
+<H5>This image contains the workflow, you can drag'n drop it into Comfyui</H5>
 
 ### This is the Comfyui version of a very personal project I started last year (2024) with GPT/Claude, as a shell/commandline tool to add tags to ANY images on my computer.
 <ins>Why you say ? READ THE WHOLE STORY</ins> (or not, your call)
@@ -9,7 +9,7 @@
 Later on, to find any image that I can't clearly remember the name of, I can simply type a keyword in a pic viewer that supports XML tags, like for example <a href="https://www.xnview.com/">XnView MP</a>.<br>
   Or at least that's the theory of it.<br>
 If you had similar needs but for AI generated images with prompts and stuff you would love to use as search tags, I can't recommend anything but the amazing <a href=https://github.com/RupertAvery/DiffusionToolkit>Diffusion Toolkit</a>, it's awesome, <b>TRY IT IT'S GREAT</b><br>
-  Picasa was nice too to search from tags, back in the days... a bit limited. A bit dead too, long ago x) Sad. And Lightroom is... meh. Nah. <h2>ANYWAY</h2>
+  Picasa was nice too to search from tags, back in the days... a bit limited. A bit dead too, long ago x) Sad. And Lightroom is... meh. Nah. <h1>_ANYWAY_</h1>
 
 
 This is a few custom nodes for ComfyUI that allow you to READ and WRITE XMP METADATA to images. These tools are particularly useful for preserving and managing tags, descriptions, and other metadata in your images. A sidenote though, this is *not* designed for writing image generation workflows, there's already plenty of nodes for that.
@@ -70,8 +70,7 @@ This node adds XMP metadata to an image tensor, with options for choosing the ou
 
 1. Clone this repository into the `custom_nodes` folder of your ComfyUI installation:
    ```
-   cd ComfyUI/custom_nodes
-   git clone https://github.com/yourusername/comfyui-too-xmp-metadata.git
+   git clone https://github.com/tetsuoo-online/comfyui-too-xmp-metadata.git
    ```
 
 2. Make sure ExifTool is installed:
