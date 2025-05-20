@@ -1,6 +1,18 @@
+![Image](https://github.com/user-attachments/assets/ae1f9455-4e22-4ba0-a182-c68a0b10dda5)
+
 # ComfyUI XMP Metadata Tools
 
-A collection of custom nodes for ComfyUI that allow you to read and write XMP metadata to images. These tools are particularly useful for preserving and managing tags, descriptions, and other metadata in your images.
+### This is the Comfyui version of a very personal project I started last year (2024) with GPT/Claude, as a shell/commandline tool to add tags to ANY images on my computer.
+Why you say ? Whole unecessary story down below
+<details>
+  <summary>Click to expand</summary>
+  Because. I.Love.Images. Too much ! So the big idea was to add tags to images instead of yet another gigantic-painful-to-maintain database, that way you CAN'T LOSE THE TAGS ANYMORE IT'S INSIDE THE FILES ALREADY !! This is genius. lol
+Later on, to find any image that I can't clearly remember the name of, I can simply type a keyword in a pic viewer that supports XML tags, like for example [XnView MP](https://www.xnview.com/).
+Picasa was nice too, a bit limited. A bit dead too, long ago x) Sad.
+  ANYWAY</details>
+
+This a few custom nodes for ComfyUI that allow you to READ and WRITE XMP METADATA to images. These tools are particularly useful for preserving and managing tags, descriptions, and other metadata in your images. A sidenote though, this is *not* designed for writing image generation workflows, there's already plenty of nodes for that.
+
 
 ## Features
 
