@@ -32,8 +32,8 @@ This is a few custom nodes for ComfyUI that allow you to READ and WRITE XMP META
    ```
 
 2. Make sure ExifTool is installed:
-   - Download it <a href=https://exiftool.org/>here</ a>
-   - rename it to ExifTool.exe and put it at root folder.
+   - Download it <a href=https://exiftool.org/>here</a>
+   - rename the EXE (usually called "exiftool(-k).exe") to `exifTool.exe` then put it to the package root folder.
 
 ## Tiny node list
 
