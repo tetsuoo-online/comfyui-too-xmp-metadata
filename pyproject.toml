@@ -1,6 +1,6 @@
 [project]
 name = "too-xmp-metadata"
-description = ""
+description = "Custom nodes for ComfyUI that allow you to read and write XMP metadata to images"
 version = "1.0.0"
 license = {file = "LICENSE"}
 dependencies = ["pillow>=9.0.0", "numpy>=1.20.0"]
