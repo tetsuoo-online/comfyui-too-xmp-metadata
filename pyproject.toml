@@ -1,0 +1,15 @@
+[project]
+name = "too-xmp-metadata"
+description = ""
+version = "1.0.0"
+license = {file = "LICENSE"}
+dependencies = ["pillow>=9.0.0", "numpy>=1.20.0"]
+
+[project.urls]
+Repository = "https://github.com/tetsuoo-online/comfyui-too-xmp-metadata"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "comfyui-too-xmp-metadata"
+Icon = ""
