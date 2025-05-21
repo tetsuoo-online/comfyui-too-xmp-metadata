@@ -10,6 +10,6 @@ Repository = "https://github.com/tetsuoo-online/comfyui-too-xmp-metadata"
 #  Used by Comfy Registry https://comfyregistry.org
 
 [tool.comfy]
-PublisherId = ""
+PublisherId = "tetsuoo-online"
 DisplayName = "comfyui-too-xmp-metadata"
 Icon = ""
