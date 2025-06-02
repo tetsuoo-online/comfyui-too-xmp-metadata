@@ -140,10 +140,11 @@ This node adds XMP metadata to an image tensor, with options for choosing the ou
   - **Format options**: Can force specific formats or try to preserve the original format
   - **Integration with ComfyUI workflow**: Works directly with image tensors from other nodes
 
-🔴 **IMPORTANT NOTE**: For now, the Write XMP Metadata LOSSLESS node will overwrite existing XMP datas but other non-XMP metadata should remain (see image example below). The normal Write XMP Metadata on the other hand re-formats the image so if anything was in there will be PURGED before adding the new XMP metadata. So pay attention to that.
+🔴 **IMPORTANT NOTE**: For now, only the Write LOSSLESS node will keep existing metadatas (see image example below). The normal Write XMP Metadata on the other hand re-formats the image so if anything was in there it will be PURGED before adding the new metadata, so please pay attention to that.
 
-## TO DO
-- existing XMP data management
+## VERSIONS
+1.1.0
+- existing XMP datas no longer overwritten with Losless node
 - add subfolders support maybe. It sounds dangerous, but I need it~
 - add tooltips
 
