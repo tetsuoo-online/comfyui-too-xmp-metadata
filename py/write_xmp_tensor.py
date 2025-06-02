@@ -41,7 +41,7 @@ class WriteXMPMetadataTensor:
 
         module_path = os.path.dirname(os.path.abspath(__file__))
         parent_dir = os.path.dirname(module_path)  # Remonter au répertoire parent
-        exiftool_local = os.path.join(parent_dir, "exiftool.exe")
+        exiftool_local = os.path.join(parent_dir, "exiftool/exiftool.exe")
         if os.path.exists(exiftool_local):
             return os.path.abspath(exiftool_local)
         return None
