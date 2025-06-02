@@ -19,7 +19,7 @@ class ExifToolManager:
 
         if os.name == 'nt':
             module_path = os.path.dirname(os.path.abspath(__file__))
-            exiftool_local = os.path.join(module_path, "../exiftool.exe")
+            exiftool_local = os.path.join(module_path, "../exiftool/exiftool.exe")
             if os.path.exists(exiftool_local):
                 return exiftool_local
         return None
