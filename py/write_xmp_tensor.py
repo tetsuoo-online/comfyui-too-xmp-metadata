@@ -14,8 +14,10 @@ class WriteXMPMetadataTensor:
                 "image": ("IMAGE",),
                 "metadata": ("STRING", {"multiline": True, "default": "1girl, black hair"}),
                 "format_mode": (["Preserve format", "Smart format", "Force PNG", "Force JPG"],),
+                "metadata_type": (["Subject", "Description", "Custom XMP"],{"default": "Subject"}),
             },
             "optional": {
+                "custom_metadata": ("STRING", {"default": "", "multiline": False}),
                 "input_image_path": ("STRING", {"default": ""}),  # Pour préserver le nom si disponible
                 "output_dir": ("STRING", {"default": ""}),
                 "console_debug": ("BOOLEAN", {"default": False}),
@@ -38,7 +40,8 @@ class WriteXMPMetadataTensor:
             pass
 
         module_path = os.path.dirname(os.path.abspath(__file__))
-        exiftool_local = os.path.join(module_path, "../exiftool.exe")
+        parent_dir = os.path.dirname(module_path)  # Remonter au répertoire parent
+        exiftool_local = os.path.join(parent_dir, "exiftool.exe")
         if os.path.exists(exiftool_local):
             return os.path.abspath(exiftool_local)
         return None
@@ -73,12 +76,14 @@ class WriteXMPMetadataTensor:
             base_dir = os.path.join(original_dir, "tagged")
         else:
             # Sinon, utiliser le répertoire par défaut
-            base_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "tagged")
+            module_path = os.path.dirname(os.path.abspath(__file__))
+            parent_dir = os.path.dirname(module_path)  # Remonter au répertoire parent
+            base_dir = os.path.join(parent_dir, "tagged")
         
         os.makedirs(base_dir, exist_ok=True)
         return os.path.join(base_dir, filename)
 
-    def write_xmp(self, image, metadata, format_mode="Preserve format", input_image_path="", output_dir="", console_debug=False):
+    def write_xmp(self, image, metadata, format_mode="Preserve format", metadata_type="Subject", custom_metadata="", input_image_path="", output_dir="", console_debug=False):
         """
         Écrit les métadonnées XMP sur une image, en choisissant le format selon le mode
         """
@@ -145,34 +150,54 @@ class WriteXMPMetadataTensor:
         else:
             img.save(output_path, format="PNG")
             
-        # Préparer les métadonnées
-        try:
-            import json
-            metadata_dict = json.loads(metadata)
-        except json.JSONDecodeError:
-            metadata_dict = metadata
-            
-        # Créer une liste de tags à partir des métadonnées
-        tags = []
-        if isinstance(metadata_dict, dict):
-            if "tags" in metadata_dict:
-                if isinstance(metadata_dict["tags"], list):
-                    tags = metadata_dict["tags"]
-                elif isinstance(metadata_dict["tags"], str):
-                    tags = [t.strip() for t in metadata_dict["tags"].split(",")]
-        elif isinstance(metadata_dict, str):
-            tags = [t.strip() for t in metadata_dict.split(",")]
-            
-        # Construire la commande ExifTool pour ajouter les métadonnées XMP
+        # Construire la commande ExifTool basée sur le type de métadonnées
         cmd = [exiftool_path]
-        for tag in tags:
-            cmd.append(f"-XMP-dc:Subject+={tag}")
-            
-        if isinstance(metadata_dict, dict):
-            for k, v in metadata_dict.items():
-                if k != "tags" and not isinstance(v, (dict, list)):
-                    cmd.append(f"-XMP-comfyui:{k}={v}")
+        
+        if metadata_type == "Subject":
+            # Pour Subject, traiter chaque élément comme un tag séparé
+            try:
+                # Essayer de parser comme JSON
+                import json
+                try:
+                    metadata_dict = json.loads(metadata)
+                    if isinstance(metadata_dict, dict) and "tags" in metadata_dict:
+                        if isinstance(metadata_dict["tags"], list):
+                            tags = metadata_dict["tags"]
+                        else:
+                            tags = [t.strip() for t in str(metadata_dict["tags"]).split(",")]
+                    else:
+                        tags = [t.strip() for t in metadata.split(",")]
+                except json.JSONDecodeError:
+                    # Si ce n'est pas du JSON, traiter comme une liste séparée par des virgules
+                    tags = [t.strip() for t in metadata.split(",")]
+            except:
+                # En cas d'erreur, utiliser le texte brut
+                tags = [t.strip() for t in metadata.split(",")]
+                
+            # Ajouter les tags un par un
+            for tag in tags:
+                if tag:  # Ignorer les tags vides
+                    cmd.append(f"-XMP-dc:Subject+={tag}")
                     
+        elif metadata_type == "Description":
+            # Pour Description, utiliser le texte entier comme Description
+            cmd.append(f"-XMP-dc:Description={metadata}")
+            
+        elif metadata_type == "Custom XMP":
+            # Pour Custom XMP, utiliser le champ personnalisé et la valeur brute
+            if custom_metadata:
+                # Déterminer le format du préfixe XMP correct
+                if ":" in custom_metadata:
+                    # Le champ inclut déjà un préfixe d'espace de noms (ex: "XMP-dc:Creator")
+                    cmd.append(f"-{custom_metadata}={metadata}")
+                else:
+                    # Ajouter le préfixe XMP par défaut
+                    cmd.append(f"-XMP-dc:{custom_metadata}={metadata}")
+            else:
+                print("/!\\ Aucun champ personnalisé spécifié pour le type Custom XMP")
+                return ("Erreur: Champ personnalisé requis pour le type Custom XMP",)
+            
+        # Ajouter les paramètres communs
         cmd.append(output_path)
         cmd.append("-overwrite_original")
         
