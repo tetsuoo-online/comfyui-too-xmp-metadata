@@ -144,7 +144,11 @@ This node adds XMP metadata to an image tensor, with options for choosing the ou
 
 ## VERSIONS
 1.1.0
-- existing XMP datas no longer overwritten with Losless node
+  - existing metadatas no longer overwritten with Losless node
+1.0.0
+  - first release
+
+# TO DO
 - add subfolders support maybe. It sounds dangerous, but I need it~
 - add tooltips
 
