@@ -1,8 +1,7 @@
 <div align="center">
 <h1 align="center">ComfyUI XMP Metadata Tools</h1>
 </div>
-
-![Image](https://github.com/user-attachments/assets/ae1f9455-4e22-4ba0-a182-c68a0b10dda5)
+![comfyui-too-xmp-metadata v1 2 0 workflow](https://github.com/user-attachments/assets/91168b62-a7ac-41b3-928f-9b8700913558)
 <h5>This image contains the workflow, you can drag'n drop it into Comfyui</h5>
 <div align="center">
 
