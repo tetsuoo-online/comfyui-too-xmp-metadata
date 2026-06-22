@@ -1,0 +1,9 @@
+__pycache__/
+__temp/
+venv/
+*.pyc
+*.bak
+*- Copie*.py
+node.zip
+_PUBLISH.BAT
+_update-version.ps1
